@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arctic Air Perth — Air Conditioning + Refrigeration</title>
+    <meta name="description" content="Perth's trusted air conditioning and refrigeration experts. Split systems, ducted aircon, fridge repairs. Licensed, insured, same-day service. Call 1300 XXX XXX">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --blue: #0077B6;
+            --light-blue: #00B4D8;
+            --dark: #1A1A2E;
+            --white: #FFFFFF;
+            --grey: #f5f5f5;
+            --orange: #FF6B35;
+        }
+        body { font-family: 'Open Sans', sans-serif; color: var(--dark); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+        
+        /* NAV */
+        nav {
+            background: var(--white);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--blue); }
+        .logo span { color: var(--dark); }
+        .nav-phone { background: var(--blue); color: white; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 600; }
+        .nav-phone:hover { background: var(--light-blue); }
+        
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--light-blue) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; opacity: 0.95; max-width: 600px; margin: 0 auto 2rem; }
+        .hero-cta { display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+        .btn-primary { background: white; color: var(--blue); padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; }
+        .btn-secondary { background: transparent; color: white; border: 2px solid white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; }
+        .hero-phone { font-size: 1.4rem; font-weight: 700; margin-top: 1.5rem; }
+        
+        /* SERVICES */
+        .services { padding: 4rem 2rem; background: var(--grey); }
+        .section-title { text-align: center; font-size: 2rem; color: var(--blue); margin-bottom: 2rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+        .service-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
+        .service-card h3 { color: var(--blue); font-size: 1.3rem; margin-bottom: 0.8rem; }
+        .service-card p { color: #555; font-size: 0.95rem; margin-bottom: 1rem; }
+        .service-card .price { font-weight: 700; color: var(--dark); font-size: 1.1rem; }
+        .service-card .note { font-size: 0.85rem; color: #888; margin-top: 0.5rem; }
+        
+        /* WHY US */
+        .why-us { padding: 4rem 2rem; }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+        .why-item { display: flex; gap: 1rem; align-items: flex-start; }
+        .why-icon { font-size: 2rem; flex-shrink: 0; }
+        .why-item h4 { color: var(--blue); margin-bottom: 0.3rem; font-size: 1.1rem; }
+        .why-item p { font-size: 0.9rem; color: #555; }
+        
+        /* SERVICE AREAS */
+        .areas { padding: 4rem 2rem; background: var(--blue); color: white; text-align: center; }
+        .areas h2 { font-size: 2rem; margin-bottom: 2rem; }
+        .areas-list { max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.5rem; font-size: 0.95rem; }
+        .areas p.sub { margin-top: 1.5rem; font-size: 1.1rem; opacity: 0.9; }
+        
+        /* CTA */
+        .cta-section { padding: 4rem 2rem; text-align: center; background: var(--dark); color: white; }
+        .cta-section h2 { font-size: 2.2rem; margin-bottom: 1rem; }
+        .cta-section p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; }
+        .cta-phone { font-size: 2rem; font-weight: 800; color: var(--light-blue); text-decoration: none; }
+        
+        /* FOOTER */
+        footer { background: #111; color: #888; padding: 2rem; text-align: center; font-size: 0.9rem; }
+        footer p { margin-bottom: 0.5rem; }
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: white; }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="logo">ARCTIC<span>AIR</span></div>
+    <a href="tel:1300XXXXXX" class="nav-phone">📞 Call Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Cool Air. Cold Drinks. Zero Drama.</h1>
+    <p>Perth's honest air conditioning and refrigeration experts. We fix it right the first time — no overselling, no call-out fee games.</p>
+    <div class="hero-cta">
+        <a href="tel:1300XXXXXX" class="btn-primary">📞 Call Now</a>
+        <a href="#services" class="btn-secondary">View Services</a>
+    </div>
+    <div class="hero-phone">📞 1300 XXX XXX</div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+    <h2 class="section-title">What We Do</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>❄️ Split System Install + Repair</h3>
+            <p>New split system installation, replacement, or repair. All brands. All sizes.</p>
+            <div class="price">From $800 (installation)</div>
+            <div class="note">Repairs from $120</div>
+        </div>
+        <div class="service-card">
+            <h3>🌬️ Ducted Air Conditioning</h3>
+            <p>Full ducted system installation. Zoning solutions. Existing system repairs.</p>
+            <div class="price">From $5,000 (installation)</div>
+            <div class="note">Repairs from $150</div>
+        </div>
+        <div class="service-card">
+            <h3>🧊 Refrigerator + Freezer Repair</h3>
+            <p>Domestic and commercial fridge/freezer repairs. Same-day service available.</p>
+            <div class="price">From $100 (call-out + repair)</div>
+            <div class="note">No fix, no fee*</div>
+        </div>
+        <div class="service-card">
+            <h3>🏪 Commercial Refrigeration</h3>
+            <p>Cool rooms, walk-in freezers, display cases. Maintenance contracts available.</p>
+            <div class="price">From $250/month (contract)</div>
+            <div class="note">Call for custom quote</div>
+        </div>
+        <div class="service-card">
+            <h3>🔧 Aircon Service + Maintenance</h3>
+            <p>Annual split system service. Deep clean. Performance check. Extend unit life.</p>
+            <div class="price">From $120</div>
+            <div class="note">Annual service recommended</div>
+        </div>
+        <div class="service-card">
+            <h3>🚨 Emergency + After-Hours</h3>
+            <p>Commercial refrigeration emergency? Aircon fail on a 40°C day? We can help.</p>
+            <div class="price">From $180</div>
+            <div class="note">Same-day response where possible</div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us">
+    <h2 class="section-title">Why Perth Chooses Us</h2>
+    <div class="why-grid">
+        <div class="why-item">
+            <div class="why-icon">✅</div>
+            <div>
+                <h4>Licensed + Insured</h4>
+                <p>Full refrigerant handling licence. $5M public liability. All work guaranteed.</p>
+            </div>
+        </div>
+        <div class="why-item">
+            <div class="why-icon">⚡</div>
+            <div>
+                <h4>Same-Day Service</h4>
+                <p>Call before noon — we aim to be there today. Perth metro coverage.</p>
+            </div>
+        </div>
+        <div class="why-item">
+            <div class="why-icon">💰</div>
+            <div>
+                <h4>Honest Pricing</h4>
+                <p>You get the quote before we start. No surprise additions on the invoice.</p>
+            </div>
+        </div>
+        <div class="why-item">
+            <div class="why-icon">🌟</div>
+            <div>
+                <h4>No Job Too Small</h4>
+                <p>We handle everything from a single split system to a full commercial install.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section class="areas">
+    <h2>Proudly Serving Perth Metro</h2>
+    <div class="areas-list">
+        Joondalup, Wanneroo, Stirling, Balcatta, Duncraig, Greenwood, Kingsley, Innaloo, Malaga, Morley, Noranda, Perth CBD, Subiaco, Nedlands, Claremont, Cottesloe, Scarborough, Trigg, Sorrento, Hillarys, Padbury, Kallaroo, Craigie, Woodvale, Burns Beach, Iluka, Carramar, Tapping, Ashby, Hocking, Pearsall, Wangara, Beldon, Connolly, Ocean Reef, Heathridge, Edgewater
+    </div>
+    <p class="sub">Not listed? Call us — if it's in Perth, we can probably help.</p>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <h2>Ready to Fix It?</h2>
+    <p>Call us or book online. No obligations — we'll give you an honest assessment.</p>
+    <a href="tel:1300XXXXXX" class="cta-phone">📞 1300 XXX XXX</a>
+    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">hello@arcticairperth.com.au | ABN: XX XXX XXX XXX</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>Arctic Air Perth — Air Conditioning + Refrigeration</p>
+    <p>Licensed Refrigerant Handler | $5M Public Liability Insured</p>
+    <p>© 2026 Arctic Air Perth. All rights reserved.</p>
+    <p style="margin-top: 1rem;">
+        <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a>
+    </p>
+</footer>
+
+</body>
+</html>

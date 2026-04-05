@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "cold-email-writer": {
+      "version": "1.0.0",
+      "installedAt": 1775398211490
+    },
+    "cold-email-prospecting-agent": {
+      "version": "1.0.4",
+      "installedAt": 1775398223233
+    },
+    "twitter-x-api": {
+      "version": "1.0.0",
+      "installedAt": 1775399303864
+    }
+  }
+}
