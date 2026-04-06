@@ -43,7 +43,41 @@ FALLBACK_STATE = {
         {"name": "Karma EMVY Outreach", "next_run": "2026-04-07T10:30:00+08:00", "agent": "karma"},
         {"name": "Connor Audit Check", "next_run": "2026-04-07T11:00:00+08:00", "agent": "connor"},
         {"name": "Chad Build Sync", "next_run": "2026-04-07T12:00:00+08:00", "agent": "chad"}
-    ]
+    ],
+    "workflows": {
+        "emvy": {
+            "status": "active", "name": "EMVY AI",
+            "description": "Client pipeline + revenue",
+            "steps": ["Lead Gen", "Email Outreach", "Book Call", "Audit", "Build", "Retainer"],
+            "current_step": 2,
+            "stats": {"leads": 57, "booked": 0, "audits": 2, "clients": 0},
+            "next_action": "Follow up with warm leads"
+        },
+        "youtube": {
+            "status": "building", "name": "YouTube Channel",
+            "description": "Shut Up and Build — AI Agent content",
+            "steps": ["Channel Setup", "Script", "Avatar Video", "Publish", "Monetize"],
+            "current_step": 2,
+            "stats": {"videos": 0, "subscribers": 0, "views": 0},
+            "next_action": "Create YouTube channel"
+        },
+        "personal_brand": {
+            "status": "active", "name": "Personal Brand",
+            "description": "Dusk's X presence + authority",
+            "steps": ["Research", "Content", "Engagement", "Growth"],
+            "current_step": 2,
+            "stats": {"followers": 0, "posts_week": 0, "engagement": "—"},
+            "next_action": "Post 3x today on X"
+        },
+        "newsletter": {
+            "status": "planned", "name": "Newsletter",
+            "description": "Weekly newsletter funnel to EMVY",
+            "steps": ["Substack Setup", "Lead Magnet", "First Issue", "Grow List"],
+            "current_step": 0,
+            "stats": {"subscribers": 0, "open_rate": "—", "issues_sent": 0},
+            "next_action": "Create Substack account"
+        }
+    }
 }
 
 # ─── AUTH GATE ─────────────────────────────────────────────────────────────────
@@ -268,6 +302,68 @@ if state and "agents" in state:
         audits = emvy.get("audits_in_progress", 0)
         if audits > 0:
             st.info(f"🔍 {audits} audit(s) in progress — awaiting client responses")
+
+    st.divider()
+
+    # ─── WORKFLOWS / TRACKS ─────────────────────────────────────────────────
+
+    st.subheader("🚀 Active Workflows")
+
+    if "workflows" in state:
+        workflows = state["workflows"]
+        
+        wf_cols = st.columns(len(workflows))
+        
+        for idx, (wf_key, wf) in enumerate(workflows.items()):
+            with wf_cols[idx]:
+                status = wf.get("status", "unknown")
+                name = wf.get("name", wf_key)
+                desc = wf.get("description", "")
+                stats = wf.get("stats", {})
+                next_action = wf.get("next_action", "")
+                
+                # Status color
+                if status == "active":
+                    status_emoji = "🟢"
+                    status_color = "#00cc6a"
+                elif status == "building":
+                    status_emoji = "🟡"
+                    status_color = "#f5a623"
+                elif status == "planned":
+                    status_emoji = "🔵"
+                    status_color = "#4a9eff"
+                else:
+                    status_emoji = "⚪"
+                    status_color = "#666"
+                
+                # Build stats display
+                stats_html = ""
+                for k, v in stats.items():
+                    stats_html += f'<p style="font-size: 12px; margin: 3px 0;">{k}: <b>{v}</b></p>'
+                
+                # Progress through steps
+                steps = wf.get("steps", [])
+                current_step = wf.get("current_step", 0)
+                steps_html = ""
+                for i, step in enumerate(steps):
+                    if i < current_step:
+                        steps_html += f'<span style="color: #00ff88;">✓</span> '
+                    elif i == current_step:
+                        steps_html += f'<span style="color: #f5a623;">●</span> '
+                    else:
+                        steps_html += f'<span style="color: #444;">○</span> '
+                steps_html += f'<span style="font-size: 10px; color: #666;"> step {current_step+1}/{len(steps)}</span>'
+                
+                st.markdown(f"""
+                <div style="background-color: #1a1a2e; padding: 15px; border-radius: 10px; 
+                            border: 1px solid #333; height: 220px; overflow: hidden;">
+                    <h4>{status_emoji} {name}</h4>
+                    <p style="font-size: 10px; color: #888;">{desc}</p>
+                    <div style="margin: 8px 0;">{steps_html}</div>
+                    <div style="margin: 8px 0;">{stats_html}</div>
+                    <p style="font-size: 11px; color: #f5a623; margin-top: 5px;">▶ {next_action}</p>
+                </div>
+                """, unsafe_allow_html=True)
 
     st.divider()
 
