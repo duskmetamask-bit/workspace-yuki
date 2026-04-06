@@ -39,7 +39,15 @@ if not st.session_state["authenticated"]:
 
 # ─── AUTO REFRESH ─────────────────────────────────────────────────────────────
 
-st_autorefresh = st.autorefresh(interval=REFRESH_INTERVAL * 1000, key="live_refresh")
+try:
+    st_autorefresh = st.autorefresh(interval=REFRESH_INTERVAL * 1000, key="live_refresh")
+except Exception:
+    # Fallback for older Streamlit versions — meta refresh
+    st.markdown(
+        f"<meta http-equiv=\"refresh\" content=\"{REFRESH_INTERVAL}\">",
+        unsafe_allow_html=True
+    )
+    st.caption(f"⏱ Auto-refresh every {REFRESH_INTERVAL}s (legacy mode)")
 
 # ─── STATE LOADER ─────────────────────────────────────────────────────────────
 
