@@ -54,6 +54,8 @@ except Exception:
 def load_state():
     """Load agent status from shared state file."""
     try:
+        if not STATE_FILE.exists():
+            return None
         with open(STATE_FILE) as f:
             return json.load(f)
     except Exception as e:
@@ -256,7 +258,23 @@ if state and "agents" in state:
         st.info("No upcoming crons scheduled")
 
 else:
-    st.error("❌ Could not load agent state file. Is the crew running?")
+    st.info("📡 Agent state file not found — local machine only. Cloud shows static reference.")
+    
+    # Show placeholder cards on cloud
+    st.subheader("👥 Agent Status (Placeholder)")
+    st.caption("Agents update when running on local machine with state writer")
+    
+    placeholder_agents = ["yuki", "harold", "maya", "emmy", "karma", "connor", "chad"]
+    card_cols = st.columns(len(placeholder_agents))
+    for idx, name in enumerate(placeholder_agents):
+        with card_cols[idx]:
+            st.markdown(f"""
+            <div style="background-color: #1a1a24; padding: 12px; border-radius: 10px; 
+                        border: 1px solid #333; height: 180px;">
+                <h4>⏳ {name.upper()}</h4>
+                <p style="font-size: 11px; color: #666;">Awaiting data...</p>
+            </div>
+            """, unsafe_allow_html=True)
 
 st.divider()
 
