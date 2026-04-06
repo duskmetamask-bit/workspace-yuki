@@ -314,38 +314,88 @@ with col2:
 
 st.divider()
 
-# ─── AGENT CARDS ──────────────────────────────────────────────────────────────
+# ─── ORG CHART ───────────────────────────────────────────────────────────────
 
-if state and "agents" in state:
-    agents = state["agents"]
+st.subheader("🧭 Organization Chart")
 
-    st.subheader("👥 Live Agent Status")
+# YUKI — CEO at top with pfp
+yuki_col = st.columns([1, 2, 1])
+with yuki_col[1]:
+    st.markdown("""
+    <div style="text-align: center; padding: 20px;">
+        <img src="https://raw.githubusercontent.com/duskmetamask-bit/workspace-yuki/main/studios/ai-agent-studio/assets/yuki-pfp.jpg" 
+             width="100" style="border-radius: 50%; border: 3px solid #00ff88; box-shadow: 0 0 20px #00ff8844;">
+        <h3 style="color: #00ff88; margin: 10px 0 5px 0;">YUKI</h3>
+        <p style="color: #888; font-size: 12px; margin: 0;">CEO — COORDINATOR</p>
+        <p style="color: #aaa; font-size: 11px; margin-top: 8px;">🟢 ACTIVE</p>
+    </div>
+    """, unsafe_allow_html=True)
 
-    # Row of agent cards
-    card_cols = st.columns(len(agents))
-    
-    for idx, (agent_name, agent_data) in enumerate(agents.items()):
-        with card_cols[idx]:
+# Connector line
+st.markdown("<div style="text-align: center;"><span style="color: #333;">│</span></div>", unsafe_allow_html=True)
+st.markdown("<div style="text-align: center;"><span style="color: #00ff88;">▼</span></div>", unsafe_allow_html=True)
+
+# Personal Brand track label
+st.markdown("<p style="text-align: center; color: #666; font-size: 11px; margin: 5px 0;">PERSONAL BRAND TRACK</p>", unsafe_allow_html=True)
+
+# Row 2: Harold, Maya, Emmy (Personal Brand)
+brand_agents = ["harold", "maya", "emmy"]
+brand_col = st.columns(3)
+
+for idx, agent_name in enumerate(brand_agents):
+    if state and "agents" in state and agent_name in state["agents"]:
+        agent_data = state["agents"][agent_name]
+        with brand_col[idx]:
             status = agent_data.get("status", "unknown")
             emoji = status_emoji(status)
             bg = status_color(status)
-            last_run = agent_data.get("last_run", "never")
             last_action = agent_data.get("last_action", "No action recorded")
-            current_task = agent_data.get("current_task", "")
-            next_run = agent_data.get("next_run", "")
             
-            ago = get_time_ago(last_run)
+            # Role labels
+            roles = {"harold": "RESEARCH", "maya": "CONTENT", "emmy": "BUILDER"}
+            role = roles.get(agent_name, "")
             
             st.markdown(f"""
-            <div style="background-color: {bg}; padding: 12px; border-radius: 10px; 
-                        border: 1px solid #333; height: 180px; overflow: hidden;">
-                <h4>{emoji} {agent_name.upper()}</h4>
-                <p style="font-size: 11px; color: #aaa;">Last run: {ago}</p>
-                <p style="font-size: 12px; margin-top: 5px;"><b>{last_action}</b></p>
-                {f'<p style="font-size: 11px; color: #88f; margin-top: 5px;">🎯 {current_task}</p>' if current_task else ''}
-                {f'<p style="font-size: 10px; color: #888; margin-top: 5px;">⏰ Next: {get_next_cron_ago(next_run)}</p>' if next_run else ''}
+            <div style="background-color: {bg}; padding: 15px; border-radius: 10px; 
+                        border: 1px solid #333; text-align: center; height: 150px;">
+                <h4 style="color: #fff; margin: 0;">{emoji} {agent_name.upper()}</h4>
+                <p style="color: #00ff88; font-size: 10px; margin: 3px 0;">{role}</p>
+                <p style="color: #888; font-size: 11px; margin-top: 10px;">{last_action[:50]}...</p>
             </div>
             """, unsafe_allow_html=True)
+
+# Connector
+st.markdown("<div style="text-align: center; margin: 10px 0;"><span style="color: #00ff88;">▼</span></div>", unsafe_allow_html=True)
+
+# EMVY track label  
+st.markdown("<p style="text-align: center; color: #666; font-size: 11px; margin: 5px 0;">EMVY BUSINESS TRACK</p>", unsafe_allow_html=True)
+
+# Row 3: Karma, Connor, Chad (EMVY)
+emvy_agents = ["karma", "connor", "chad"]
+emvy_col = st.columns(3)
+
+for idx, agent_name in enumerate(emvy_agents):
+    if state and "agents" in state and agent_name in state["agents"]:
+        agent_data = state["agents"][agent_name]
+        with emvy_col[idx]:
+            status = agent_data.get("status", "unknown")
+            emoji = status_emoji(status)
+            bg = status_color(status)
+            last_action = agent_data.get("last_action", "No action recorded")
+            
+            roles = {"karma": "LEAD GEN", "connor": "AUDIT", "chad": "BUILD"}
+            role = roles.get(agent_name, "")
+            
+            st.markdown(f"""
+            <div style="background-color: {bg}; padding: 15px; border-radius: 10px; 
+                        border: 1px solid #333; text-align: center; height: 150px;">
+                <h4 style="color: #fff; margin: 0;">{emoji} {agent_name.upper()}</h4>
+                <p style="color: #f5a623; font-size: 10px; margin: 3px 0;">{role}</p>
+                <p style="color: #888; font-size: 11px; margin-top: 10px;">{last_action[:50]}...</p>
+            </div>
+            """, unsafe_allow_html=True)
+
+st.divider()
 
     st.divider()
 
