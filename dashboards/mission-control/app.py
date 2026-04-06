@@ -23,19 +23,30 @@ AWST_TZ = timezone(timedelta(hours=8))
 
 # ─── AUTH GATE ─────────────────────────────────────────────────────────────────
 
-if "authenticated" not in st.session_state:
-    st.session_state["authenticated"] = False
+# ─── AUTH GATE ─────────────────────────────────────────────────────────────────
 
-if not st.session_state["authenticated"]:
-    st.title("🔒 Mission Control — Login")
-    password = st.text_input("Enter PIN", type="password")
-    if password:
-        if password == st.secrets["PIN"]:
-            st.session_state["authenticated"] = True
-            st.rerun()
-        else:
-            st.error("Incorrect PIN")
-    st.stop()
+# Check for bypass mode (Streamlit Cloud secrets)
+try:
+    bypass_auth = st.secrets.get("BYPASS_PIN", False)
+except Exception:
+    bypass_auth = False
+
+if not bypass_auth:
+    if "authenticated" not in st.session_state:
+        st.session_state["authenticated"] = False
+
+    if not st.session_state["authenticated"]:
+        st.title("🔒 Mission Control — Login")
+        password = st.text_input("Enter PIN", type="password")
+        if password:
+            if password == st.secrets["PIN"]:
+                st.session_state["authenticated"] = True
+                st.rerun()
+            else:
+                st.error("Incorrect PIN")
+        st.stop()
+else:
+    st.session_state["authenticated"] = True
 
 # ─── AUTO REFRESH ─────────────────────────────────────────────────────────────
 
