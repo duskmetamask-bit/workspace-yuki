@@ -15,6 +15,109 @@ from pathlib import Path
 
 st.set_page_config(page_title="🚀 Mission Control", page_icon="🚀", layout="wide")
 
+# ─── CUSTOM THEME CSS ──────────────────────────────────────────────────────────
+st.markdown("""
+<style>
+    /* Main background */
+    .stApp {
+        background: linear-gradient(135deg, #0a0a12 0%, #0f0f1a 50%, #0a0a12 100%);
+    }
+    
+    /* Headers */
+    h1, h2, h3, h4 {
+        color: #ffffff !important;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    /* Cards and containers */
+    .stCard, div[data-testid="stVerticalBlock"] > div {
+        background-color: #12121a !important;
+        border-radius: 12px;
+    }
+    
+    /* Success/Info boxes */
+    .stAlert {
+        background-color: #1a1a2e !important;
+        border: 1px solid #2a2a3e !important;
+    }
+    
+    /* Metrics */
+    div[data-testid="stMetricValue"] {
+        color: #00ff88 !important;
+        font-weight: 700 !important;
+    }
+    div[data-testid="stMetricLabel"] {
+        color: #8888aa !important;
+    }
+    
+    /* Dividers */
+    hr {
+        border-color: #2a2a3e !important;
+        margin: 1rem 0 !important;
+    }
+    
+    /* Sidebar / expanders */
+    .streamlit-expanderHeader {
+        background-color: #1a1a2e !important;
+        color: #ffffff !important;
+    }
+    
+    /* Buttons */
+    .stButton > button {
+        background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+        color: #0a0a12 !important;
+        border: none !important;
+        font-weight: 600 !important;
+    }
+    .stButton > button:hover {
+        box-shadow: 0 0 20px #00ff8866 !important;
+    }
+    
+    /* Progress bars */
+    .stProgress > div > div > div {
+        background: linear-gradient(90deg, #00ff88 0%, #00cc6a 100%) !important;
+    }
+    
+    /* Text colors */
+    .stCaption {
+        color: #6666aa !important;
+    }
+    
+    /* Links */
+    a {
+        color: #00ff88 !important;
+        text-decoration: none !important;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #0a0a12;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #2a2a3e;
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #3a3a4e;
+    }
+    
+    /* Glow effects on cards */
+    .glow-card {
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+    }
+    
+    /* Status colors */
+    .status-ok { color: #00ff88 !important; }
+    .status-idle { color: #888 !important; }
+    .status-running { color: #4a9eff !important; }
+    .status-error { color: #ff4444 !important; }
+</style>
+""", unsafe_allow_html=True)
+
 # ─── CONFIG ───────────────────────────────────────────────────────────────────
 
 STATE_FILE = Path("/home/dusk/.openclaw/shared/state/agent-status.json")
