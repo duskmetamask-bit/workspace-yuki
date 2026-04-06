@@ -38,7 +38,7 @@
 
 **[What we built/automated]** — [2-3 sentences describing the actual work]
 
-**Tools used:** [n8n / Zapier / Make.com / Custom scripts / etc.]
+**Tools used:** [Cursor / Claude Code / Custom scripts / Zapier / Make.com / etc.]
 
 **Timeline:** [How long the engagement took]
 

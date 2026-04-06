@@ -1,170 +1,135 @@
-# 🚀 MISSION CONTROL — YUKI
+# MISSION CONTROL — YUKI CEO
 
-**Last updated:** 2026-04-05 16:41 AWST
-**Review:** Dusk approves in 🔴 PENDING APPROVAL
-
----
-
-## 🏛️ THE 4 WORKFLOW PILLARS
-
-Linear priority. One pillar at a time. Move to next only when current is DONE or BLOCKED.
-
-| # | Pillar | Goal | DONE when... | BLOCKED when... |
-|---|--------|------|---------------|-----------------|
-| 1st | **EMVY AI AUDIT** | Get clients, close deals | 34 cold emails sent AND 3+ replies AND 1+ booked call | No Gmail creds |
-| 2nd | **RESEARCH + OPPORTUNITIES** | Scan market, find angles | Research digest with 5+ actionable leads OR content ideas saved | No active research running |
-| 3rd | **BUILD FROM RESEARCH** | Content app, pages, copy, funnels | RepurposeKit deployed OR landing page updated | No build tasks queued |
-| 4th | **SHIP SaaS PRODUCTS** | Deploy micro-SaaS, test | 1 app deployed + first sign-up OR test results saved | No apps ready to deploy |
-
-**Rotation rule:** Work highest unblocked pillar. Blocked → flag → move next. Never sit idle.
+**Last updated:** 2026-04-06 16:58 AWST
+**Status:** ACTIVE — Empire mode
 
 ---
 
-## 📍 WHERE WE ARE RIGHT NOW
+## CREW
 
-**Active pillar:** 3rd — BUILD FROM RESEARCH
-**Next:** Pillar 4 (SaaS) → Pillar 2 (Research) → Pillar 1 (EMVY when unblocked)
+| Agent | Role | Status |
+|-------|------|--------|
+| Happy Harold | Research: AI, agents, SMB, money (daily 8 AM) | 🟢 Running |
+| Maya | Content: X scans + drafts (daily 9 AM) | 🟢 Running |
+| Emmy | Builder: reads Harold → builds SaaS (daily 10 AM) | 🟢 Running |
+| Karma | Leads: EMVY outreach + Calendly | 🟢 Running |
+| Connor | Audit: practice audits (EMVY pipeline) | 🟢 Running |
+| Chad | Build: EMVY builds (Mon-Fri 1 AM) | 🟢 Running |
 
----
-
-## 🔴 PILLAR 1 — EMVY AI AUDIT 🔴
-*Status: BLOCKED — Waiting on Dusk*
-
-| Item | Blocker |
-|------|---------|
-| Cold email outreach → 34 verified leads | Gmail app password |
-| Calendly → Discovery Form auto-email | Gmail watcher built (no API token needed) |
-
-**DONE condition:** 34 emails sent + 3+ replies + 1+ booked call
+**EMVY Pipeline:** Karma → Connor → Chad
+**Research Rule:** Only Harold searches. Nobody else.
 
 ---
 
-## 🟡 PILLAR 2 — RESEARCH + OPPORTUNITIES
-*Status: AVAILABLE — Running light*
+## TODAY'S DECISIONS (LOCKED)
 
-| Item | Agent | Status |
-|------|-------|--------|
-| Money opportunities | Felix | 🟢 Light mode |
-| AI news + releases | Happy Harold | 🟢 Light mode |
-| Daily synthesis | Chen | 🟢 Light mode |
-| **Content briefs + drafts** | **Maya** | **🟡 RESEARCH → DRAFTS → SENDS TO DUSK** |
+### SMB Vertical: Wellness + Local Service Businesses
+- Booking bots: $400/mo proven
+- EMVY lead magnet: free booking bot → audit upsell
+- 10-min build, no coding needed
 
-**Maya's role:** Scan X/Twitter for viral AI/automation content, trending hooks, content gaps. Find what's working in the niche. Deliver content briefs — Dusk executes.
-**DONE condition:** 5+ actionable leads OR content ideas saved
+### EMVY Pricing
+- Audit: $1,500
+- Setup + Build: $3,000-5,000
+- Retainer: $1,500/month
+- Enterprise: $5,000/month
 
----
+### Revenue Targets
+- Month 1: $1,500 (1 audit)
+- Month 2: $3,000
+- Month 3: $5,000 MRR
+- Q2: $15,000 MRR
 
-## 🟢 PILLAR 3 — BUILD FROM RESEARCH 🟢
-*Status: ACTIVE NOW*
-
-| Item | Agent | Status |
-|------|-------|--------|
-| RepurposeKit MVP | Emmy | 🟡 Deploy pending — needs Render dashboard connect |
-| Landing page | Karma | ✅ Done — live at emvy-site.vercel.app |
-| Cold email scripts | Yuki | ✅ Done |
-| Follow-up E2 script | Yuki | ✅ Done |
-| Lead CRM | Yuki | ✅ Done |
-| Outreach talk track | Yuki | ✅ Done |
-| Email verifier | Yuki | ✅ Done |
-| Case study template | Yuki | ✅ Done |
-| Gmail Calendly watcher | Yuki | ✅ Done |
-
-**DONE condition:** RepurposeKit deployed to Render
+### KPIs
+- 10 leads/month, 4 discovery calls, 3 audits, 2 setups, 1 retainer
+- 7 posts/week, +50 followers/week, 350 replies/week
 
 ---
 
-## 🟡 PILLAR 4 — SHIP SaaS PRODUCTS
-*Status: NEXT UP*
+## CRONS
 
-| Item | Agent | Status |
-|------|-------|--------|
-| RepurposeKit | Emmy | 🟡 Deploy when P3 done |
-| AI Readiness Tool | Emmy | 🟡 Deploy when P3 done |
-| MeetingMind, CV Tailor | Emmy | ✅ Ready |
-| 20+ other apps | Emmy | ✅ Ready |
-
-**DONE condition:** 1 app live + first sign-up OR test results saved
-
----
-
-## ✅ DONE THIS SESSION
-
-- Cold email sender → scripts/cold-email-sender.py
-- Follow-up E2 → scripts/followup-email-2.py
-- Calendly → Discovery Form → scripts/calendly-discovery-email.py
-- Lead CRM → pipeline/lead-crm.md
-- Outreach talk track → docs/outreach-talk-track.md
-- Email verifier → scripts/email-verifier.py
-- Case study template → docs/EMVY-Case-Study-Template.md
-- Gmail Calendly watcher → scripts/gmail-calendly-watcher.py
-- Landing page → emvy-site.vercel.app (live)
-- ClawHub skills: cold-email-writer, cold-email-prospecting-agent
-- **34 verified leads** in prospects.csv
+| Cron | Schedule | Status |
+|------|----------|--------|
+| Happy Harold — Daily AI Research | 8 AM AWST | 🟢 |
+| Maya — Daily Content Scan | 9 AM AWST | 🟢 |
+| Emmy — Daily Build Intel | 10 AM AWST | 🟢 |
+| Yuki Morning Briefing | 9 AM AWST | 🟢 |
+| Yuki Evening Debrief | 8 PM AWST | 🟢 |
+| Karma Calendly Booking Check | 8 AM + 8 PM UTC | ⚠️ timeout issue |
+| Chad Daily Build Sprint | Mon-Fri 1 AM AWST | 🟢 |
 
 ---
 
-## 🔔 FLAGS FOR DUSK
+## 🚨 BLOCKERS
 
-| What | Effect |
-|------|--------|
-| Gmail app password → dawnlabsai | Unblocks Pillar 1 → cold emails fire |
-| Connect RepurposeKit on Render dashboard | Unblocks Pillar 3 → deploys |
-
-**Render connect (2 min):** render.com → Blueprint → connect `duskmetamask-bit/repurposerkit`
-
----
-
-## ⚠️ PERMANENT RULES (MEMORY-LOCKED)
-- **Maya:** Research + scanning ONLY. NO POSTING. Ever.
-- Karma owns landing page/copy work
-- Dusk executes X posts using outreach talk track
+| Blocker | Effect | Fix |
+|---------|--------|-----|
+| GMAIL_APP_PASSWORD not set | Cold emails can't fire | Dusk needs to set env var |
+| Karma Calendly Check timing out | Not alerting on bookings | System-level fix needed |
+| Evening Debrief timing out | Not sending review | System-level fix needed |
+| Session context bloated | Responses timing out | Dusk needs to /new me |
+| Landing page — verify live | Needs browser check | Dusk check link |
 
 ---
 
-*Yuki works one pillar at a time. Blocked → flag → move next. Linear. Relentless.*
+## 📋 QUEUE — PRIORITY ORDER
+
+### 1. Fix prospects (PARTIAL — web search blocked)
+- [x] Added 6 Perth wellness studios to prospects.csv
+- [ ] Need: find emails for wellness businesses (web search blocked)
+- [ ] Target: 20+ verified wellness/local service prospects
+
+### 2. Build Booking Bot (Brief DONE)
+- [x] Booking Bot MVP brief: memory/BOOKING-BOT-BRIEF.md
+- [ ] Emmy: build MVP after prospects done
+
+### 3. EMVY Site — LIVE! 🎉
+- [x] Landing page DEPLOYED: emvy-site-tvqrify57-duskmetamask-bits-projects.vercel.app
+- [ ] Promote to production or add custom domain
+
+### 4. Get 1st EMVY client
+- [ ] Karma: send cold emails to wellness prospects
+- [ ] Follow-up sequences
+- [ ] Book 1 discovery call
+
+### 2. Build Booking Bot MVP (Emmy)
+- [ ] Emmy: build GPT + calendar booking bot
+- [ ] Deploy to Render
+- [ ] Use as EMVY lead magnet
+
+### 3. Launch Content Factory SaaS
+- [ ] Emmy: finalize Content Factory MVP
+- [ ] Deploy to Render
+- [ ] Get first 10 paying users
+
+### 4. Content Calendar Execution
+- [ ] Follow content calendar (Mon-Sat)
+- [ ] Post 7x/week minimum
+- [ ] Reply 50+/day
 
 ---
 
-## 🏗️ PILLAR 5 — BROTHER'S BUSINESS (NEW)
+## ✅ DONE TODAY
 
-**Business:** Arctic Air Perth — Aircon + Refrigeration, Perth Northern Suburbs
-
-| Item | Status |
-|------|--------|
-| Business plan | ✅ Done |
-| Operations manual (pricing + competitors) | ✅ Done |
-| Onboarding checklist | ✅ Done |
-| Property manager outreach scripts | ✅ Done |
-| Website (deployable HTML) | ✅ Done |
-| Brand assets | ✅ Done |
-| AI agent configured | ✅ Done |
-| Lead tracker | ✅ Done |
-
-**What's next for brother:**
-1. Confirm business name
-2. Get refrigeration licence (DEMIRS WA)
-3. Get $5M public liability insurance
-4. Set up ServiceM8 + Xero
-5. Deploy website (Netlify — free)
-6. Start revenue mode
-
+- Full org restructure executed
+- 22 dead/broken crons removed
+- Harold goes deep (18+ searches, SMB focus)
+- Maya: X scan + hook library → 2-3 drafts
+- Emmy: L3 builder, reads Harold
+- All agent files updated (SOUL, MEMORY, IDENTITY, HEARTBEAT)
+- SMB vertical locked: Wellness + Local Service
+- EMVY pricing locked
+- Content calendar locked
+- Revenue targets + KPIs locked
 
 ---
 
-## 🔵 BASE SCOUT — RESEARCH AGENT (NEW)
+## 📁 FILES CREATED TODAY
 
-**Agent:** Base Scout — RWA + Crypto + AI Agents on Base
-**Runs:** Every 6 hours (cron)
-**Output:** /home/dusk/.openclaw/workspace-yuki/research/base-scout/
+- memory/EMVY-RESEARCH.md — service menu + pricing
+- memory/CONTENT-CALENDAR.md — posting schedule
+- memory/REVENUE-TARGETS.md — KPIs + revenue goals
 
-| Research Area | What It Covers |
-|--------------|----------------|
-| Base Ecosystem | New dApps, TVL, protocols, partnerships |
-| AI Agents on Base | Agent primitives, autonomous on-chain activity, agent infrastructure |
-| RWA | Tokenized assets, USDC/stablecoin adoption, compliance |
-| Airdrops | Eligibility criteria, deadlines, protocol activity |
-| Crypto Signals | Macro trends, BTC/ETH, DeFi TVL |
+---
 
-**Output format:** Weekly report + hot alerts (flagged immediately if big)
-**Reports to:** Yuki → Maya → Dusk for content
-
+*Yuki is CEO. I run the empire. I make the calls. I report back.*
