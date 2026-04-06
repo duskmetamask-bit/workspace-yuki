@@ -130,6 +130,7 @@ FALLBACK_STATE = {
     "last_updated": "2026-04-06T23:32:53+08:00",
     "agents": {
         "yuki": {"status": "idle", "last_run": "2026-04-06T23:00:00+08:00", "last_action": "Sent evening debrief to Dusk", "current_task": "Monitoring crew operations"},
+        "hermes": {"status": "ok", "last_run": "2026-04-06T23:00:00+08:00", "last_action": "Strategic advisory — reviewing operations", "current_task": "Supervising with Yuki"},
         "harold": {"status": "ok", "last_run": "2026-04-06T08:00:00+08:00", "last_action": "18 searches complete — SMB industry deep dive", "next_run": "2026-04-07T08:00:00+08:00"},
         "maya": {"status": "ok", "last_run": "2026-04-06T09:00:00+08:00", "last_action": "3 draft posts delivered to Dusk", "next_run": "2026-04-07T09:00:00+08:00"},
         "emmy": {"status": "ok", "last_run": "2026-04-06T23:32:00+08:00", "last_action": "Mission Control live dashboard deployed", "next_run": "2026-04-07T10:00:00+08:00", "current_task": "Building next SaaS"},
@@ -318,16 +319,28 @@ st.divider()
 
 st.subheader("🧭 Organization Chart")
 
-# YUKI — CEO at top with pfp
-yuki_col = st.columns([1, 2, 1])
-with yuki_col[1]:
+# YUKI + HERMES — co-supervisors at top
+supervisor_cols = st.columns([1, 1])
+
+with supervisor_cols[0]:
     st.markdown("""
-    <div style="text-align: center; padding: 20px;">
+    <div style="text-align: center; padding: 15px;">
         <img src="https://raw.githubusercontent.com/duskmetamask-bit/workspace-yuki/main/studios/ai-agent-studio/assets/yuki-pfp.jpg" 
-             width="100" style="border-radius: 50%; border: 3px solid #00ff88; box-shadow: 0 0 20px #00ff8844;">
-        <h3 style="color: #00ff88; margin: 10px 0 5px 0;">YUKI</h3>
-        <p style="color: #888; font-size: 12px; margin: 0;">CEO — COORDINATOR</p>
-        <p style="color: #aaa; font-size: 11px; margin-top: 8px;">🟢 ACTIVE</p>
+             width="80" style="border-radius: 50%; border: 3px solid #00ff88; box-shadow: 0 0 20px #00ff8844;">
+        <h3 style="color: #00ff88; margin: 8px 0 3px 0;">YUKI</h3>
+        <p style="color: #888; font-size: 10px; margin: 0;">CEO — COORDINATOR</p>
+        <p style="color: #aaa; font-size: 10px; margin-top: 5px;">🟢 ACTIVE</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with supervisor_cols[1]:
+    st.markdown("""
+    <div style="text-align: center; padding: 15px;">
+        <img src="https://raw.githubusercontent.com/duskmetamask-bit/workspace-yuki/main/studios/ai-agent-studio/assets/hermes-pfp.jpg" 
+             width="80" style="border-radius: 50%; border: 3px solid #4a9eff; box-shadow: 0 0 20px #4a9eff44;">
+        <h3 style="color: #4a9eff; margin: 8px 0 3px 0;">HERMES</h3>
+        <p style="color: #888; font-size: 10px; margin: 0;">STRATEGIC ADVISOR</p>
+        <p style="color: #aaa; font-size: 10px; margin-top: 5px;">🟢 SUPERVISOR</p>
     </div>
     """, unsafe_allow_html=True)
 
